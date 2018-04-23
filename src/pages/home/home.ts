@@ -43,4 +43,8 @@ export class HomePage implements NavLifecycles {
       }, () => loading.dismiss());
   }
 
+  selecionaCarro(carro: Carro) {
+    console.log(carro);
+  }
+
 }

@@ -11,9 +11,9 @@ import { Carro } from '../../models/carro';
 */
 @Injectable()
 export class CarrosServiceProvider {
-
+  
   constructor(private _http: HttpClient) {
-    console.log('Hello CarrosServiceProvider Provider');
+
   }
 
   lista() {
