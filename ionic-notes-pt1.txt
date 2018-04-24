@@ -46,6 +46,13 @@ Ionic - Navigating Lifecycle
 https://blog.ionicframework.com/navigating-lifecycle-events/
 
 
+IndexedDB: Banco de dados dos navegadores, cobertos pela especificação da W3C
+- Salva objetos em formato JSON
+
+Ionic Storage: O ionic nos oferece um serviço chamado storage que serve de interface entre o desenvolvedor e 
+qualquer banco de dados (de acordo com a configuração passada)
+- O Ionic storage deve ser importado como um module (IonicStorageModule)
+
 Ao gerar uma nova página pelo IONIC CLI com o comando ionic g page NomeDoComponenteDePagina o Ionic não executa
 um passo importante: a forma como o componente será carregado, portanto, precisamos faze-lo manualmente:
 - Se não for carregado por lazy-loading, devemos adicioná-lo em declarations e em entryComponents

@@ -11,8 +11,16 @@ import { CarrosServiceProvider } from '../providers/carros-service/carros-servic
 import { EscolhaPage } from '../pages/escolha/escolha';
 import { AgendamentosServiceProvider } from '../providers/agendamentos-service/agendamentos-service';
 
-// habilita o finally em toda aplicação
+import { IonicStorageModule } from '@ionic/storage';
+
+// habilita recursos do rxjs em toda aplicação
 import 'rxjs/add/operator/finally';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/observable/of';
+import { AgendamentoDaoProvider } from '../providers/agendamento-dao/agendamento-dao';
 
 @NgModule({
   declarations: [
@@ -23,7 +31,12 @@ import 'rxjs/add/operator/finally';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot({
+      name: 'aluracar',
+      storeName: 'agendamentos',
+      driverOrder: ['indexeddb'] // bds que queremos acessar
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [ // Componentes que queremos navegar
@@ -34,9 +47,10 @@ import 'rxjs/add/operator/finally';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     CarrosServiceProvider,
-    AgendamentosServiceProvider // adicionado automaticamente pelo ionic cli
+    AgendamentosServiceProvider,
+    AgendamentoDaoProvider // adicionado automaticamente pelo ionic cli,
   ]
 })
-export class AppModule {}
+export class AppModule { }
