@@ -1,4 +1,4 @@
-- instalar o ionic globalmente:
+﻿- instalar o ionic globalmente:
 
 npm install -g ionic@3.16.0	cordova@7.0.1 --save-exact
 
@@ -40,6 +40,7 @@ this._http
 ionic g provider carros.service
 -> Gera dentro da pasta 'providers' uma pasta chamada carros-service com uma classe chamada carros-service.ts com o decorator injectable, etc
             })
+-> Também adiciona o novo provider na lista de providers do appmodule
 
 Ionic - Navigating Lifecycle
 https://blog.ionicframework.com/navigating-lifecycle-events/

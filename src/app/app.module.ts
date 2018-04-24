@@ -9,6 +9,10 @@ import { HomePage } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { CarrosServiceProvider } from '../providers/carros-service/carros-service';
 import { EscolhaPage } from '../pages/escolha/escolha';
+import { AgendamentosServiceProvider } from '../providers/agendamentos-service/agendamentos-service';
+
+// habilita o finally em toda aplicação
+import 'rxjs/add/operator/finally';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { EscolhaPage } from '../pages/escolha/escolha';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CarrosServiceProvider // adicionado automaticamente pelo ionic cli
+    CarrosServiceProvider,
+    AgendamentosServiceProvider // adicionado automaticamente pelo ionic cli
   ]
 })
 export class AppModule {}
