@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Carro } from '../../models/carro';
 import { Acessorio } from '../../models/acessorio';
+import { CadastroPage } from '../cadastro/cadastro';
 
-@IonicPage()
+@IonicPage() // Para o lazyloading funcionar a classe deve estar decorada com IonicPage
 @Component({
   selector: 'page-escolha',
   templateUrl: 'escolha.html',
@@ -30,5 +31,9 @@ export class EscolhaPage {
 
   get precoTotal() {
     return this._precoTotal;
+  }
+
+  avancarCadastro() {
+    this.navCtrl.push(CadastroPage.name, { carroSelecionado: this.carro, precoTotal: this._precoTotal });
   }
 }
